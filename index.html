@@ -2323,8 +2323,8 @@ const defaultSettings = {
   address: 'Mumbai, Maharashtra, India',
   facebookUrl: 'https://www.facebook.com/dolphin.kotak?locale=hi_IN',
   facebookName: 'Dolphin Kotak',
-  instagramUrl: '#',
-  instagramName: '@yourprofile'
+  instagramUrl: 'https://www.instagram.com/vipnumberwala9?utm_source=qr&igsh=MXN4dDh3aDgwdmJzYg==',
+  instagramName: 'Dolphin Kotak'
 };
 
 function saveBusinessSettings() {
@@ -2417,30 +2417,28 @@ function loadBusinessSettings() {
   // Social Media Links
   const facebookLink = document.querySelector('a[href*="facebook.com"]');
   if(facebookLink) {
-    facebookLink.href = settings.facebookUrl;
-    facebookLink.textContent = settings.facebookName;
+    facebookLink.href = settings.facebookUrl || defaultSettings.facebookUrl;
+    facebookLink.textContent = settings.facebookName || defaultSettings.facebookName;
   }
 
   const instagramInfoRow = document.getElementById('instagram-info-row');
   const instagramLinkContainer = document.getElementById('instagram-link-container');
   if(instagramLinkContainer && instagramInfoRow) {
-    if(settings.instagramUrl && settings.instagramUrl !== '#') {
-      instagramLinkContainer.innerHTML = `<a href="${settings.instagramUrl}" target="_blank" style="color:var(--gold);text-decoration:none;">${settings.instagramName}</a>`;
-      instagramInfoRow.style.display = 'flex';
-    } else {
-      instagramInfoRow.style.display = 'none';
-    }
+    const igUrl = settings.instagramUrl && settings.instagramUrl !== '#' ? settings.instagramUrl : defaultSettings.instagramUrl;
+    const igName = settings.instagramName && settings.instagramName !== '@yourprofile' ? settings.instagramName : defaultSettings.instagramName;
+    
+    instagramLinkContainer.innerHTML = `<a href="${igUrl}" target="_blank" style="color:var(--gold);text-decoration:none;">${igName}</a>`;
+    instagramInfoRow.style.display = 'flex';
   }
 
   const footerInstagram = document.getElementById('footer-instagram');
   if(footerInstagram) {
-    if(settings.instagramUrl && settings.instagramUrl !== '#') {
-      footerInstagram.href = settings.instagramUrl;
-      footerInstagram.textContent = `i ${settings.instagramName}`;
-      footerInstagram.style.display = 'inline';
-    } else {
-      footerInstagram.style.display = 'none';
-    }
+    const igUrl = settings.instagramUrl && settings.instagramUrl !== '#' ? settings.instagramUrl : defaultSettings.instagramUrl;
+    const igName = settings.instagramName && settings.instagramName !== '@yourprofile' ? settings.instagramName : defaultSettings.instagramName;
+    
+    footerInstagram.href = igUrl;
+    footerInstagram.textContent = `i ${igName}`;
+    footerInstagram.style.display = 'inline';
   }
 
 
