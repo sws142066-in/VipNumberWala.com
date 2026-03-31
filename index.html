@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -20,7 +20,7 @@
   --glow: 0 0 32px rgba(255,68,68,0.18);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
 body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;}
 ::selection{background:var(--gold);color:var(--black);}
 ::-webkit-scrollbar{width:4px;}
@@ -363,6 +363,13 @@ footer{background:#050505;border-top:1px solid var(--border);padding:40px 6vw 28
   .form-row{grid-template-columns:1fr;}
   .easybuzz-features{grid-template-columns:1fr;}
   .modal-body{padding:18px;}
+}
+
+@media(max-width:420px){
+  .nav-logo{font-size:1.5rem !important;}
+  .nav-cta{display:none;}
+  .hero h1{font-size:clamp(2.5rem,10vw,3rem);}
+  .hero-sub{font-size:0.95rem;}
 }
 </style>
 </head>
