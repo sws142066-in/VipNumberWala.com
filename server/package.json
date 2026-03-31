@@ -1,0 +1,23 @@
+{
+  "name": "lifetime-number-admin-server",
+  "version": "1.0.0",
+  "description": "Secure admin backend for LifetimeNumber application",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["admin", "numbers", "secure"],
+  "author": "LifetimeNumber",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "sqlite3": "^5.1.6",
+    "jsonwebtoken": "^9.0.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.3",
+    "body-parser": "^1.20.2"
+  }
+}
