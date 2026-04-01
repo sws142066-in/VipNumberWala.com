@@ -1030,6 +1030,25 @@ footer{background:#050505;border-top:1px solid var(--border);padding:40px 6vw 28
           💾 Save Settings
         </button>
       </div>
+
+      <h3 style="color:#333;margin-top:30px;margin-bottom:20px;">🔐 Change Admin Password</h3>
+      <div style="background:#f9f9f9;padding:25px;border-radius:12px;border:1px solid #e0e0e0;">
+        <div style="margin-bottom:15px;">
+          <label style="display:block;color:#333;font-weight:600;margin-bottom:8px;font-size:0.9rem;">Current Password</label>
+          <input type="password" id="currentPasswordInput" placeholder="Enter current password" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;box-sizing:border-box;font-family:inherit;">
+        </div>
+        <div style="margin-bottom:15px;">
+          <label style="display:block;color:#333;font-weight:600;margin-bottom:8px;font-size:0.9rem;">New Password</label>
+          <input type="password" id="newPasswordInput" placeholder="Minimum 6 characters" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;box-sizing:border-box;font-family:inherit;">
+        </div>
+        <div style="margin-bottom:20px;">
+          <label style="display:block;color:#333;font-weight:600;margin-bottom:8px;font-size:0.9rem;">Confirm New Password</label>
+          <input type="password" id="confirmPasswordInput" placeholder="Confirm new password" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;box-sizing:border-box;font-family:inherit;">
+        </div>
+        <button onclick="changeAdminPassword()" style="width:100%;padding:14px;background:#333;color:white;border:none;border-radius:8px;cursor:pointer;font-weight:700;font-size:1rem;transition:opacity 0.2s;">
+          Change Password
+        </button>
+      </div>
     </div>
     
     <!-- AUDIT TAB -->
@@ -1668,7 +1687,8 @@ function adminLogin() {
   }
   
   // Show local credentials info
-  if (username === 'admin' && password === 'admin123') {
+  const savedPassword = localStorage.getItem('vipAdminPassword') || 'admin123'; 
+  if (username === 'admin' && password === savedPassword) {
     adminToken = 'demo-token-' + Date.now();
     currentAdminUser = { username: 'admin', role: 'admin' };
     document.getElementById('currentAdminDisplay').textContent = 'admin (Demo Mode)';
@@ -2617,9 +2637,22 @@ function updateAboutDisplay() {
 // ════════════════════════════════════════════════════════════════════════════════════════════════════════════
 // END ADMIN SYSTEM
 // ════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+function changeAdminPassword() { 
+  const currentSaved = localStorage.getItem('vipAdminPassword') || 'admin123'; 
+  const current = document.getElementById('currentPasswordInput').value; 
+  const newPass = document.getElementById('newPasswordInput').value; 
+  const confirm = document.getElementById('confirmPasswordInput').value; 
+  if (current !== currentSaved) { showToast('❌ Current password is wrong'); return; } 
+  if (newPass.length < 6) { showToast('❌ New password must be at least 6 characters'); return; } 
+  if (newPass !== confirm) { showToast('❌ Passwords do not match'); return; } 
+  localStorage.setItem('vipAdminPassword', newPass); 
+  showToast('✅ Password changed successfully!'); 
+  document.getElementById('currentPasswordInput').value = ''; 
+  document.getElementById('newPasswordInput').value = ''; 
+  document.getElementById('confirmPasswordInput').value = ''; 
+} 
 </script>
 </body>
 </html>
  
-
-
