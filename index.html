@@ -774,7 +774,13 @@ async function sbSet(key,value){ try{await sb.from('settings').upsert({key,value
 async function loadNumbers(){
   try{
     const{data,error}=await sb.from('numbers').select('*');
-    if(!error&&data&&data.length>0){numbers=data.map(normNum);}
+    if(!error&&data&&data.length>0){
+  numbers=data.map(normNum).sort((a,b)=>{
+    const numA=parseInt(a.id.replace(/\D/g,''))||0;
+    const numB=parseInt(b.id.replace(/\D/g,''))||0;
+    return numA-numB;
+  });
+}
   }catch(e){/* use defaults */}
 }
 
@@ -1152,7 +1158,11 @@ async function loadAdminNumbers(){
   try{
     const{data,error}=await sb.from('numbers').select('*');
     if(error)throw error;
-    numbers=(data||[]).map(normNum);
+    numbers=(data||[]).map(normNum).sort((a,b)=>{
+  const numA=parseInt(a.id.replace(/\D/g,''))||0;
+  const numB=parseInt(b.id.replace(/\D/g,''))||0;
+  return numA-numB;
+});
     document.getElementById('totalNumbers').textContent=numbers.length;
     document.getElementById('availableNumbers').textContent=numbers.filter(n=>!n.sold).length;
     document.getElementById('soldNumbers').textContent=numbers.filter(n=>n.sold).length;
