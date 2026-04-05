@@ -47,7 +47,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 .hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 60% at 75% 50%,rgba(255,68,68,0.07) 0%,transparent 70%);}
 .hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,68,68,0.12) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 100%);}
 .hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:76px 5vw 60px;}
-.hero-brand-top{text-align:left;margin-bottom:20px;}
+.hero-brand-top{text-align:center;margin-bottom:20px;}
 .hero-brand-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:#cc1111;letter-spacing:2px;text-transform:uppercase;}
 .hero-brand-owner-row{display:flex;align-items:center;justify-content:center;gap:16px;margin:10px 0 8px;}
 .hero-brand-line{flex:0 0 80px;height:1px;background:#cc1111;opacity:0.4;}
@@ -60,7 +60,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,4rem);font-weight:900;line-height:1.08;color:#0a0a0a;margin-bottom:20px;}
 .hero h1 .gold-text{color:#cc1111;-webkit-text-fill-color:#cc1111;background:none;display:block;}
 .hero-sub{color:#555555;font-size:0.95rem;line-height:1.75;max-width:520px;margin-bottom:32px;font-weight:500;}
-.hero-actions{display:flex;flex-direction:column;gap:14px;max-width:360px;}
+.hero-actions{display:flex;flex-direction:column;gap:14px;max-width:360px;margin-left:auto;margin-right:auto;}
 .btn-gold{background:#cc1111;color:#ffffff;padding:15px 36px;border-radius:4px;border:none;font-family:'Poppins',sans-serif;font-size:0.9rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;text-decoration:none;text-align:center;transition:opacity 0.2s,transform 0.15s;display:block;}.btn-gold:hover{opacity:0.88;transform:translateY(-2px);}
 .btn-outline-gold{border:2px solid #cc1111;color:#cc1111;background:#ffffff;padding:13px 32px;border-radius:4px;font-size:0.88rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;text-align:center;transition:all 0.2s;display:block;}.btn-outline-gold:hover{background:rgba(204,17,17,0.05);}
 .hero-stats-bar{display:flex;align-items:center;justify-content:flex-start;gap:0;background:rgba(255,68,68,0.05);border:1px solid rgba(255,68,68,0.15);border-radius:12px;padding:24px 32px;margin-bottom:20px;}
@@ -324,8 +324,23 @@ footer{background:#f5f5f5;border-top:1px solid var(--border);padding:40px 6vw 28
       <div class="hero-stat-item"><div class="stat-num" id="stat-years-display">12+</div><div class="stat-label">Years in Business</div></div>
     </div>
     <div class="hero-info-card">
-      <div class="hero-info-text"><strong>At VIP Number Wala, we don't just offer numbers — we create your business identity.</strong><br><br>We offer a curated range of easy-to-remember, high-value VIP numbers that reflect trust, professionalism, and uniqueness.<br><br><em>VIP Number Wala — where your number becomes your identity.</em></div>
-      <div class="hero-info-badge">🏅</div>
+<div class="hero-info-text">
+  <strong>At VIP Number Wala, we don’t just offer numbers — we create your business identity.</strong>
+  <br><br>
+
+  A premium VIP number is more than contact; it becomes your brand recall, your recognition, and your first impression. Designed for powerful promotion and lasting impact, the right number helps your business stand out and stay remembered.
+  <br><br>
+
+  What sets us apart is our commitment to offering carefully curated, easy-to-remember VIP numbers that reflect trust, professionalism, and uniqueness. With a wide selection, personalized guidance, and customized options based on astrology and numerology, we help you find a number that truly aligns with your success and growth.
+  <br><br>
+
+  Backed by experience and trusted by thousands, we ensure a smooth and reliable experience — because your business deserves a number that speaks for you.
+  <br><br>
+
+  <em>VIP Number Wala — where your number becomes your identity.</em>
+</div>
+
+<div class="hero-info-badge">🏅</div>
     </div>
   </div>
 </section>
@@ -466,8 +481,12 @@ footer{background:#f5f5f5;border-top:1px solid var(--border);padding:40px 6vw 28
     </div>
     <div class="footer-col"><h5>Categories</h5><ul><li><a href="#numbers">VIP Premium Numbers</a></li><li><a href="#numbers">Fancy / Choice Numbers</a></li><li><a href="#numbers">Numerology Numbers</a></li><li><a href="#numbers">Business Numbers</a></li></ul></div>
     <div class="footer-col"><h5>Quick Links</h5><ul><li><a href="#categories">Browse Categories</a></li><li><a href="#how">How It Works</a></li><li><a href="#testimonials">Reviews</a></li><li><a href="#enquiry">Contact</a></li></ul></div>
-    <div class="footer-col"><h5>Support</h5><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">FAQ</a></li><li><button onclick="openAdminLogin()" style="background:none;border:none;color:var(--gold);cursor:pointer;font-size:0.82rem;padding:0;font-family:'Poppins',sans-serif;font-weight:600;">Admin Login</button></li></ul></div>
-  </div>
+    <div class="footer-col"><h5>Support</h5><ul>
+  <li><a href="#" onclick="openPrivacyModal();return false;">Privacy Policy</a></li>
+  <li><a href="#" onclick="openTermsModal();return false;">Terms of Service</a></li>
+  <li><a href="#" onclick="openFAQModal();return false;">FAQ</a></li>
+  <li><button onclick="openAdminLogin()" style="background:none;border:none;color:var(--gold);cursor:pointer;font-size:0.82rem;padding:0;font-family:'Poppins',sans-serif;font-weight:600;">Admin Login</button></li>
+</ul></div>
   <div class="footer-bottom" style="border-top:1px solid #ddd;padding-top:30px;margin-top:30px;">
     <p style="color:#999999;font-size:0.8rem;">© 2024 VIP NUMBER WALA. All Rights Reserved.</p>
     <p><a href="mailto:vipnumberwala9@gmail.com" style="color:#0a0a0a;text-decoration:none;font-weight:500;">vipnumberwala9@gmail.com</a> &nbsp;|&nbsp; <a id="footer-facebook" href="https://www.facebook.com/dolphin.kotak" target="_blank" style="color:var(--gold);text-decoration:none;font-weight:600;">Facebook</a> &nbsp;|&nbsp; <a id="footer-instagram" href="https://www.instagram.com/vipnumberwala9" target="_blank" style="color:var(--gold);text-decoration:none;font-weight:600;">Instagram</a></p>
@@ -1228,6 +1247,297 @@ document.addEventListener('DOMContentLoaded',async()=>{
   hero.addEventListener('mouseleave',function(){mx=0;my=0;});
   (function loop(){cx+=(mx-cx)*0.07;cy+=(my-cy)*0.07;img.style.transform='translateY(-50%) translate('+Math.round(cx*30*10)/10+'px,'+Math.round(cy*30*10)/10+'px)';requestAnimationFrame(loop);})();
 })();
+</script>
+
+<!-- PRIVACY POLICY MODAL -->
+<div class="modal-overlay" id="privacyOverlay" onclick="if(event.target===this)closePrivacyModal()">
+  <div class="modal-box" style="max-width:680px;">
+    <div class="modal-header">
+      <h2>🔐 Privacy Policy</h2>
+      <button class="modal-close" onclick="closePrivacyModal()">✕</button>
+    </div>
+    <div class="modal-body" style="line-height:1.8;color:#555;font-size:0.9rem;">
+
+      <p style="margin-bottom:20px;">VIP Number Wala is committed to protecting your privacy. This Statement of Privacy applies to the VIP Number Wala public website and governs data collection and usage. By using the VIP Number Wala website, you consent to the data practices described in this statement.</p>
+
+      <h4 style="font-family:'Playfair Display',serif;color:#0a0a0a;margin-bottom:10px;">Collection of your Personal Information</h4>
+      <p style="margin-bottom:20px;">VIP Number Wala collects personally identifiable information, such as your Email Address, Name, Business Name, and State Location. We also collect anonymous demographic information like your postcode and product preferences.</p>
+
+      <h4 style="font-family:'Playfair Display',serif;color:#0a0a0a;margin-bottom:10px;">Use of your Personal Information</h4>
+      <p style="margin-bottom:8px;">VIP Number Wala uses your personal information to operate its website and deliver requested services. Additionally, we may inform you about other products or services available and conduct surveys for research purposes.</p>
+      <p style="margin-bottom:20px;">VIP Number Wala does not sell, rent, or lease customer information to third parties. However, we track user activity within the website to improve our services.</p>
+
+      <h4 style="font-family:'Playfair Display',serif;color:#0a0a0a;margin-bottom:10px;">Use of Cookies</h4>
+      <p style="margin-bottom:20px;">The VIP Number Wala website uses cookies to enhance your online experience. Cookies help personalize your visits and remember your preferences. You can accept or decline cookies in your browser settings.</p>
+
+      <h4 style="font-family:'Playfair Display',serif;color:#0a0a0a;margin-bottom:10px;">Security of your Personal Information</h4>
+      <p style="margin-bottom:20px;">We implement strong security measures to protect your personal data from unauthorized access, use, or disclosure. Our data is stored securely in controlled environments.</p>
+
+      <h4 style="font-family:'Playfair Display',serif;color:#0a0a0a;margin-bottom:10px;">Changes to this Statement</h4>
+      <p>VIP Number Wala may update this Privacy Policy periodically. We encourage users to review this statement regularly to stay informed about how we protect your information.</p>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function openPrivacyModal(){document.getElementById('privacyOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closePrivacyModal(){document.getElementById('privacyOverlay').classList.remove('open');document.body.style.overflow='';}
+</script>
+<!-- TERMS OF SERVICE MODAL -->
+<div class="modal-overlay" id="termsOverlay" onclick="if(event.target===this)closeTermsModal()">
+  <div class="modal-box" style="max-width:680px;">
+    <div class="modal-header">
+      <h2>📋 Terms of Service</h2>
+      <button class="modal-close" onclick="closeTermsModal()">✕</button>
+    </div>
+    <div class="modal-body" style="line-height:1.8;color:#555;font-size:0.9rem;">
+
+      <div style="background:rgba(255,68,68,0.05);border:1px solid rgba(255,68,68,0.15);border-radius:8px;padding:16px;margin-bottom:24px;">
+        <p style="font-size:0.78rem;font-weight:700;color:#cc1111;line-height:1.8;">
+          THIS AGREEMENT IS AN ELECTRONIC DOCUMENT IN TERMS OF THE INFORMATION TECHNOLOGY ACT, 2000 AND RULES MADE THERE UNDER AND THE AMENDED PROVISIONS PERTAINING TO ELECTRONIC DOCUMENTS / RECORDS IN VARIOUS STATUTES AS AMENDED BY THE INFORMATION TECHNOLOGY ACT, 2000. THIS AGREEMENT DOES NOT REQUIRE ANY PHYSICAL, ELECTRONIC OR DIGITAL SIGNATURE.
+        </p>
+      </div>
+
+      <p style="margin-bottom:20px;">
+        THE AGREEMENT IS A LEGALLY BINDING DOCUMENT BETWEEN YOU AND <strong style="color:#0a0a0a;">VIP NUMBER WALA</strong> (BOTH TERMS DEFINED BELOW). THE TERMS OF THIS AGREEMENT WILL BE EFFECTIVE UPON YOUR ACCEPTANCE OF THE SAME (DIRECTLY OR INDIRECTLY IN ELECTRONIC FORM OR BY MEANS OF AN ELECTRONIC RECORD) AND WILL GOVERN THE RELATIONSHIP BETWEEN USER AND VIP NUMBER WALA FOR THE USE OF THE WEBSITE (DEFINED BELOW).
+      </p>
+
+      <p style="margin-bottom:20px;">
+        THIS DOCUMENT IS PUBLISHED AND SHALL BE CONSTRUED IN ACCORDANCE WITH THE PROVISIONS OF RULE 3(I) OF INFORMATION TECHNOLOGY (INTERMEDIARIES GUIDELINES) RULE, 2011 UNDER INFORMATION TECHNOLOGY ACT, 2000 THAT REQUIRE PUBLISHING THE RULES AND REGULATIONS, PRIVACY POLICY AND USER AGREEMENT FOR ACCESS OR USAGE OF THE WEBSITE.
+      </p>
+
+      <div style="background:#fff8f8;border-left:3px solid #cc1111;padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:20px;">
+        <p style="font-weight:700;color:#cc1111;font-size:0.85rem;">
+          PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY BEFORE USING OR REGISTERING ON THE WEBSITE OR ACCESSING ANY MATERIAL, INFORMATION OR SERVICES THROUGH THE WEBSITE. IF YOU DO NOT AGREE WITH THESE TERMS AND CONDITIONS, PLEASE DO NOT USE THE WEBSITE.
+        </p>
+      </div>
+
+      <h4 style="font-family:'Playfair Display',serif;color:#0a0a0a;margin-bottom:10px;">Terms for Service</h4>
+      <p style="margin-bottom:20px;">
+        By accessing or using the VIP Number Wala website, you agree to be bound by these Terms of Service. VIP Number Wala reserves the right to update or modify these terms at any time without prior notice. Continued use of the website following any changes constitutes your acceptance of the revised terms.
+      </p>
+
+      <h4 style="font-family:'Playfair Display',serif;color:#0a0a0a;margin-bottom:10px;">Use of the Website</h4>
+      <p style="margin-bottom:20px;">
+        You agree to use the VIP Number Wala website only for lawful purposes and in a manner that does not infringe the rights of others. Any unauthorized use of the website, its content, or services is strictly prohibited.
+      </p>
+
+      <h4 style="font-family:'Playfair Display',serif;color:#0a0a0a;margin-bottom:10px;">Governing Law</h4>
+      <p>
+        These Terms of Service shall be governed by and construed in accordance with the laws of India. Any disputes arising out of or in connection with these terms shall be subject to the exclusive jurisdiction of the courts located in Maharashtra, India.
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function openTermsModal(){document.getElementById('termsOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeTermsModal(){document.getElementById('termsOverlay').classList.remove('open');document.body.style.overflow='';}
+</script> 
+
+<!-- FAQ MODAL -->
+<div class="modal-overlay" id="faqOverlay" onclick="if(event.target===this)closeFAQModal()">
+  <div class="modal-box" style="max-width:720px;">
+    <div class="modal-header" style="position:sticky;top:0;z-index:10;background:#fff;">
+      <h2>❓ Frequently Asked Questions</h2>
+      <button class="modal-close" onclick="closeFAQModal()">✕</button>
+    </div>
+    <div class="modal-body" style="line-height:1.8;color:#555;font-size:0.9rem;">
+
+      <!-- SECTION 1 -->
+      <div style="margin-bottom:32px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+          <span style="font-size:1.2rem;">👑</span>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:800;color:#0a0a0a;margin:0;">VIP Mobile Numbers — General</h3>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">What is a VIP mobile number?</strong></div>
+          <div style="padding:14px 18px;">A VIP mobile number is a sequence of digits with an easy-to-recall, memorable pattern (e.g., 9999000000, 1234567890). They are valued for status, branding, and numerology — essentially giving your contact details a premium upgrade.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">How to buy a fancy mobile number online in India?</strong></div>
+          <div style="padding:14px 18px;">Visit VIP Number Wala, search your preferred pattern, choose a number from our exclusive inventory, complete the secure payment, and we will immediately send you the Unique Porting Code (UPC). The process is quick, legal, and hassle-free.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">Is buying a VIP number legal in India?</strong></div>
+          <div style="padding:14px 18px;">Yes, it is 100% legal. VIP Number Wala provides a valid Unique Porting Code (UPC) for all sales. This code allows you to port the number to any network (Jio, Airtel, Vi, BSNL) under your name, fully compliant with TRAI regulations.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">What is the price of a VVIP mobile number?</strong></div>
+          <div style="padding:14px 18px;">Prices for VVIP mobile numbers vary widely, from a few thousand rupees for simple fancy patterns to over ₹1,00,000 for ultra-rare sequences (like Quadruple Zeros or pure sequential numbers). Prices are clearly displayed on our listings.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">How long does it take to activate a fancy mobile number?</strong></div>
+          <div style="padding:14px 18px;">After you submit the UPC to your chosen operator, the Mobile Number Portability (MNP) process typically takes 3 to 7 business days for activation. Patience — VIP status is worth the wait!</div>
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div style="margin-bottom:32px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+          <span style="font-size:1.2rem;">🔢</span>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:800;color:#0a0a0a;margin:0;">Number Types & Patterns</h3>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">Do you sell 786 mobile numbers?</strong></div>
+          <div style="padding:14px 18px;">Absolutely. We maintain a large, constantly updated inventory of 786 numbers. You can filter our stock to find numbers that start, end, or contain the auspicious 786 sequence. These are our most popular premium numbers.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">What is a mirror mobile number?</strong></div>
+          <div style="padding:14px 18px;">A mirror mobile number is a palindrome — where the number reads the same forwards and backward (e.g., 9898989898). We have a dedicated category for these unique numbers — they're truly easy to remember.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">Can I get a mobile number matching my date of birth?</strong></div>
+          <div style="padding:14px 18px;">Yes, our advanced search tool allows you to input your date, year, or anniversary date to find numbers that contain that specific digit sequence, ensuring your number is truly personal.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">Do you have sequential mobile numbers (e.g., 12345)?</strong></div>
+          <div style="padding:14px 18px;">Yes, sequential mobile number patterns (like 123456 or 765432) are premium stock and are listed under our VVIP or Ultra-Fancy categories. They are the smoothest numbers in the collection.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">Can I get a premium mobile number for business use?</strong></div>
+          <div style="padding:14px 18px;">Yes. A premium mobile number for business enhances credibility and recall. We offer multi-number 'Family Packs' that allow you to buy sequential numbers for your entire team, ensuring professionalism across the board.</div>
+        </div>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div style="margin-bottom:32px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+          <span style="font-size:1.2rem;">📲</span>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:800;color:#0a0a0a;margin:0;">UPC & Porting Process</h3>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">What is UPC (Unique Porting Code)?</strong></div>
+          <div style="padding:14px 18px;">The UPC is an 8-digit alpha-numeric code required for MNP. Once your purchase is confirmed, we deliver the UPC code to you via SMS and email within 24 hours. You use this to claim ownership from the telecom operator.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">What if the UPC expires or the number is invalid?</strong></div>
+          <div style="padding:14px 18px;">VIP Number Wala offers a 100% Money Back Guarantee. If you encounter any issue with the UPC or number validation during the porting process, we guarantee a full and fast refund.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">Can I port this fancy number to any network?</strong></div>
+          <div style="padding:14px 18px;">Yes. The number is legally transferable and compatible with all major Indian telecom operators (Airtel, Jio, Vi, BSNL). You can port it to prepaid or postpaid as per your choice.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">Do I have to visit the store after buying the number?</strong></div>
+          <div style="padding:14px 18px;">Yes, the only offline step is visiting the nearest retail outlet of your chosen operator (Jio/Airtel/Vi) with your ID proof and the UPC to initiate the MNP process and complete e-KYC. We handle the rest.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">Can I choose a new number starting with a specific digit series?</strong></div>
+          <div style="padding:14px 18px;">Yes, our 'Start With' search filter allows you to select your preferred first few digits to find a unique, easy-to-remember series that fits your requirement perfectly.</div>
+        </div>
+      </div>
+
+      <!-- SECTION 4 -->
+      <div style="margin-bottom:32px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+          <span style="font-size:1.2rem;">💳</span>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:800;color:#0a0a0a;margin:0;">Services & Payment</h3>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">Why should I choose VIP Number Wala over a direct operator?</strong></div>
+          <div style="padding:14px 18px;">Unlike operators (Vi, Jio) who offer a limited pool, VIP Number Wala aggregates the best fancy mobile numbers from across India, giving you a significantly wider and more exclusive selection than any single source.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">Do you offer a lucky mobile number consultation based on numerology?</strong></div>
+          <div style="padding:14px 18px;">Yes, our specialized team provides guidance to select a lucky mobile number based on the total sum of digits, which is often considered crucial for success and good fortune. Just ask our support team!</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">Do you sell prepaid or postpaid fancy numbers?</strong></div>
+          <div style="padding:14px 18px;">The numbers sold are legally transferable, meaning you can choose to activate them as either a prepaid or postpaid connection with your chosen operator when you complete the porting process.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">Is there an extra charge for number portability?</strong></div>
+          <div style="padding:14px 18px;">No. The price you pay to VIP Number Wala is only for the number itself. The MNP process initiated at the operator store is either free or requires a minimal first recharge as per the operator's policy.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">Can I pay for my VIP number using UPI?</strong></div>
+          <div style="padding:14px 18px;">Yes. We offer multiple secure payment options for convenience, including all major credit/debit cards, Net Banking, and instant payment via UPI (Google Pay, Paytm, PhonePe).</div>
+        </div>
+      </div>
+
+      <!-- SECTION 5 -->
+      <div style="margin-bottom:16px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+          <span style="font-size:1.2rem;">🔮</span>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:800;color:#0a0a0a;margin:0;">Numerology Services</h3>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">What is mobile number numerology?</strong></div>
+          <div style="padding:14px 18px;">Mobile number numerology is the study of how the digits in your mobile number influence your life, career, relationships, and financial success. Each number carries unique vibrations and energy that can impact various aspects of your life.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">What numerology services do you offer?</strong></div>
+          <div style="padding:14px 18px;">We offer three types of numerology reports: (1) <strong>Existing Mobile Number Analysis</strong> — Analyze your current number's impact on your life (₹299), (2) <strong>Personalized Lucky Number Suggestion</strong> — Get a new number recommendation based on your life goals (₹399), and (3) <strong>Complete Report</strong> — Both analysis and new number suggestion (₹499).</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">How do I get my numerology report?</strong></div>
+          <div style="padding:14px 18px;">Simply visit our Numerology Services page, select your preferred plan, fill in your details (name, date of birth, mobile number), complete the payment, and you'll receive your detailed PDF report via email and WhatsApp within 24 hours.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">What information is included in the numerology report?</strong></div>
+          <div style="padding:14px 18px;">Our comprehensive report includes: numerology score of your number, positive and negative vibrations, relationship and compatibility insights, career and business influence analysis, financial energy alignment, Lo Shu Grid analysis, and personalized remedial suggestions.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">Can numerology really help me choose a lucky mobile number?</strong></div>
+          <div style="padding:14px 18px;">Numerology is a traditional belief-based practice used for centuries to understand energy patterns. While results are subjective and not scientifically validated, many people find value in aligning their mobile number with their life path and goals for positive outcomes.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">How long does it take to receive my numerology report?</strong></div>
+          <div style="padding:14px 18px;">Your personalized numerology report is generated instantly upon successful payment confirmation. You can view and download your report immediately from your Profile &gt; Numerology Reports section.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">Is my personal information safe when ordering a numerology report?</strong></div>
+          <div style="padding:14px 18px;">Yes, absolutely. We follow strict data protection policies. Your personal information is used solely for generating your numerology report and is never shared with third parties. All payments are processed through secure, encrypted gateways.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;margin-bottom:12px;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">Can I get a refund if I'm not satisfied with my numerology report?</strong></div>
+          <div style="padding:14px 18px;">Due to the personalized and digital nature of our numerology services, refunds are governed by our Refund & Cancellation Policy. Once the report is generated and delivered, it cannot be refunded. Please review our terms before purchasing.</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,68,68,0.15);border-radius:10px;overflow:hidden;">
+          <div style="background:rgba(255,68,68,0.05);padding:14px 18px;border-bottom:1px solid rgba(255,68,68,0.1);"><strong style="color:#cc1111;">What payment methods do you accept for numerology services?</strong></div>
+          <div style="padding:14px 18px;">We accept all major payment methods including Credit/Debit Cards, Net Banking, UPI (Google Pay, PhonePe, Paytm), and Razorpay. All transactions are secure and encrypted for your safety.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function openFAQModal(){document.getElementById('faqOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeFAQModal(){document.getElementById('faqOverlay').classList.remove('open');document.body.style.overflow='';}
 </script>
 </body>
 </html>
