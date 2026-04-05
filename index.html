@@ -787,7 +787,7 @@ function loadCartFromStorage(){
 function renderNumbers(filter){
   currentFilter=filter;
   const grid=document.getElementById('numbersGrid');
-  let list=filter==='All'?numbers:numbers.filter(n=>n.cat===filter);
+  let list=filter==='All'?numbers:numbers.filter(n=>n.cat&&n.cat.toLowerCase().startsWith(filter.toLowerCase()));
   if(currentSearch)list=list.filter(n=>n.number.includes(currentSearch));
   if(list.length===0){grid.innerHTML='<div class="no-results"><span class="no-results-icon">🔍</span><div class="no-results-text">No numbers found</div><div class="no-results-sub">Try a different search or category.</div></div>';return;}
   grid.innerHTML=list.map(n=>{
