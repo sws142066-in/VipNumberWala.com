@@ -8,6 +8,18 @@
 <!-- SUPABASE SDK - loaded once here -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
+
+/* new badges */
+.nc-rtp-badge{display:inline-flex;align-items:center;gap:5px;font-size:0.68rem;font-weight:700;letter-spacing:1px;padding:3px 9px;border-radius:3px;text-transform:uppercase;margin-bottom:8px;}
+.nc-rtp-badge.ready{background:rgba(76,175,80,0.12);color:#2e7d32;border:1px solid rgba(76,175,80,0.35);}
+.nc-rtp-badge.not-ready{background:rgba(211,47,47,0.08);color:#c62828;border:1px solid rgba(211,47,47,0.25);}
+.nc-ttp-row{display:flex;align-items:center;gap:6px;margin-bottom:8px;font-size:0.75rem;font-weight:600;color:#555;}
+.nc-ttp-label{background:var(--gold-dim);border:1px solid var(--border);color:var(--gold);padding:2px 7px;border-radius:3px;font-size:0.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+.nc-ttp-value{color:var(--white);font-weight:700;}
+
+
+
+
 @media(max-width:768px){#navCartoon{display:block !important;}#heroCartoon{display:none !important;}}
 @media(min-width:769px){#navCartoon{display:none !important;}#heroCartoon{display:block !important;}}
 :root{--black:#ffffff;--black2:#f5f5f5;--card:#f5f5f5;--border:rgba(255,68,68,0.15);--gold:#ff4444;--gold2:#ff4444;--gold3:#ff4444;--gold-dim:rgba(255,68,68,0.08);--white:#0a0a0a;--shadow:0 12px 48px rgba(0,0,0,0.08);--glow:0 0 32px rgba(255,68,68,0.12);}
@@ -204,8 +216,8 @@ footer{background:#f5f5f5;border-top:1px solid var(--border);padding:40px 6vw 28
 #adminLoginOverlay{display:none!important;}#adminLoginOverlay.show{display:flex!important;}
 #editNumberOverlay{display:none!important;}#editNumberOverlay.show{display:flex!important;}
 @media(max-width:1024px){.cat-grid{grid-template-columns:repeat(2,1fr);}.why-grid{grid-template-columns:repeat(2,1fr);}.steps-grid{grid-template-columns:repeat(2,1fr);gap:32px;}.steps-grid::before{display:none;}}
-@media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.nav-cta{display:none;}nav{padding:0 4vw;height:60px;}.mobile-menu{top:60px;}.nav-logo{font-size:1.25rem!important;}#navCartoon{width:38px!important;height:46px!important;}.cart-btn{padding:7px 12px;font-size:0.78rem;gap:5px;}.enquiry-wrap{grid-template-columns:1fr;}.cat-grid,.why-grid,.steps-grid{grid-template-columns:1fr;}.footer-top{flex-direction:column;}.enq-form{padding:24px 18px;}.form-row{grid-template-columns:1fr;}.modal-body{padding:18px;}.admin-content-area{padding:16px;}.hero-brand-name{font-size:1.3rem;}.hero-inner{padding:80px 5vw 40px;}.hero-middle{flex-direction:column;align-items:center;gap:24px;margin-bottom:28px;}.hero-img-wrap{width:clamp(200px,60vw,300px);}.hero-content{text-align:center;}.hero h1{font-size:clamp(2rem,7vw,3rem);}.hero-sub{max-width:100%;}.hero-actions{max-width:100%;width:100%;}.hero-stats-bar{flex-direction:column;gap:16px;padding:20px;}.hero-stat-divider{width:80%;height:1px;}.hero-info-card{flex-direction:column;align-items:center;text-align:center;}.hero-slogan-card{padding:10px 16px;}.hero-slogan-text{font-size:0.78rem;}}
-@media(max-width:420px){nav{padding:0 3vw;}.nav-logo{font-size:1.1rem!important;}#navCartoon{width:32px!important;height:40px!important;}.cart-btn span:not(.cart-count){display:none;}}
+@media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.nav-cta{display:none;}.mobile-menu{top:72px;}.nav-logo{font-size:1.25rem!important;}#navCartoon{width:56px!important;height:68px!important;}.cart-btn{padding:7px 12px;font-size:0.78rem;gap:5px;}.enquiry-wrap{grid-template-columns:1fr;}.cat-grid,.why-grid,.steps-grid{grid-template-columns:1fr;}.footer-top{flex-direction:column;}.enq-form{padding:24px 18px;}.form-row{grid-template-columns:1fr;}.modal-body{padding:18px;}.admin-content-area{padding:16px;}.hero-brand-name{font-size:1.3rem;}.hero-inner{padding:80px 5vw 40px;}.hero-middle{flex-direction:column;align-items:center;gap:24px;margin-bottom:28px;}.hero-img-wrap{width:clamp(200px,60vw,300px);}.hero-content{text-align:center;}.hero h1{font-size:clamp(2rem,7vw,3rem);}.hero-sub{max-width:100%;}.hero-actions{max-width:100%;width:100%;}.hero-stats-bar{flex-direction:column;gap:16px;padding:20px;}.hero-stat-divider{width:80%;height:1px;}.hero-info-card{flex-direction:column;align-items:center;text-align:center;}.hero-slogan-card{padding:10px 16px;}.hero-slogan-text{font-size:0.78rem;}}
+@media(max-width:420px){nav{padding:0 3vw;}.nav-logo{font-size:1.1rem!important;}#navCartoon{width:48px!important;height:58px!important;}.cart-btn span:not(.cart-count){display:none;}}
 </style>
 </head>
 <body>
@@ -253,7 +265,18 @@ footer{background:#f5f5f5;border-top:1px solid var(--border);padding:40px 6vw 28
         <div id="panel-bank" style="display:none">
           <div class="upi-box">
             <div id="checkoutQRContainer" style="margin-bottom:20px;text-align:center;"></div>
-            <div style="text-align:left;margin-bottom:10px;"><div style="display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:0.85rem;margin-bottom:12px;"><span style="color:#666666;">Account Name</span><span style="color:var(--white);font-weight:600;">VIP NUMBER WALA</span><span style="color:#666666;">UPI / ID</span><span id="upi-display" style="color:var(--gold);font-weight:600;">9372503810@airtel</span><span style="color:#666666;">Preferred Mode</span><span style="color:var(--white);">IMPS / NEFT / UPI</span></div></div>
+<div style="text-align:left;margin-bottom:10px;">
+  <div style="display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:0.85rem;margin-bottom:12px;">
+    <span style="color:#666666;">Account Holder</span><span id="bank-holder-display" style="color:var(--white);font-weight:600;">VIP NUMBER WALA</span>
+    <span style="color:#666666;">Account Number</span><span id="bank-number-display" style="color:var(--white);font-weight:600;">—</span>
+    <span style="color:#666666;">IFSC Code</span><span id="bank-ifsc-display" style="color:var(--white);font-weight:600;">—</span>
+    <span style="color:#666666;">Branch</span><span id="bank-branch-display" style="color:var(--white);font-weight:600;">—</span>
+    <span style="color:#666666;">Account Type</span><span id="bank-type-display" style="color:var(--white);font-weight:600;">—</span>
+    <span style="color:#666666;">UPI ID</span><span id="upi-display" style="color:var(--gold);font-weight:600;">9372503810@airtel</span>
+    <span style="color:#666666;">Contact</span><span id="bank-contact-display" style="color:var(--white);font-weight:600;">—</span>
+    <span style="color:#666666;">Preferred Mode</span><span style="color:var(--white);">IMPS / NEFT / UPI</span>
+  </div>
+</div>
             <p class="upi-note">Transfer the exact amount and share your transaction reference via WhatsApp. Activation begins once payment is confirmed.</p>
           </div>
           <div style="margin-bottom:14px;display:flex;align-items:center;gap:10px;"><input type="checkbox" id="bank-confirm-check" style="width:18px;height:18px;cursor:pointer;" onchange="toggleConfirmBtn('bank')"><label for="bank-confirm-check" style="font-size:0.85rem;color:#666;cursor:pointer;font-weight:500;">✓ I have completed the bank transfer</label></div>
@@ -278,10 +301,10 @@ footer{background:#f5f5f5;border-top:1px solid var(--border);padding:40px 6vw 28
 <!-- NAV -->
 <nav>
   <div style="display:flex;align-items:center;gap:10px;">
-    <img src="ChatGPT Image Apr 2, 2026, 08_07_58 PM.png" id="navCartoon" alt="" style="display:none;width:48px;height:58px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.15));">
+<img src="ChatGPT Image Apr 2, 2026, 08_07_58 PM.png" id="navCartoon" alt="" style="display:none;width:60px;height:72px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.15));">
     <div style="display:flex;flex-direction:column;line-height:1.1;">
       <a href="#" class="nav-logo" style="font-size:1.8rem;font-weight:600;letter-spacing:0;background:linear-gradient(135deg,var(--gold2),var(--gold),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">𝑽𝑰𝑷 𝑵𝑼𝑴𝑩𝑬𝑹 𝑾𝑨𝑳𝑨</a>
-      <a href="https://www.instagram.com/vipnumberwala9" target="_blank" style="font-size:10px;color:#999;text-align:right;text-decoration:none;margin-top:2px;font-family:'Poppins',sans-serif;font-weight:500;transition:color 0.2s;" onmouseover="this.style.color='#ff4444'" onmouseout="this.style.color='#999'">Mayank A Kotak</a>
+ <a href="https://www.instagram.com/vipnumberwala9" target="_blank" style="font-size:12px;color:#E34234;text-align:right;text-decoration:none;margin-top:2px;font-family:'Poppins',sans-serif;font-weight:500;font-weight:bold;">Mayank A Kotak</a>
     </div>
   </div>
   <ul class="nav-links"><li><a href="#categories">Categories</a></li><li><a href="#numbers">Browse Numbers</a></li><li><a href="#how">How It Works</a></li><li><a href="#enquiry">Contact</a></li></ul>
@@ -464,7 +487,7 @@ footer{background:#f5f5f5;border-top:1px solid var(--border);padding:40px 6vw 28
       <div class="section-eyebrow">Get In Touch</div>
       <h3>Find Your <span class="g">Perfect<br/>Number</span> Today</h3>
       <div class="gold-divider" style="margin-bottom:32px"></div>
-      <div class="info-row"><div class="info-ic">📞</div><div><strong>Call / WhatsApp</strong><span><a href="tel:+917718889999">+91 771 888 9999</a></span></div></div>
+<div class="info-row"><div class="info-ic">📞</div><div><strong>Call / WhatsApp</strong><span><a href="tel:+917718889999">+91 771 888 9999</a> &nbsp;|&nbsp; <a href="tel:+918108999999">+91 810 899 9999</a></span></div></div>
       <div class="info-row"><div class="info-ic">✉️</div><div><strong>Email Us</strong><span><a href="mailto:vipnumberwala9@gmail.com">vipnumberwala9@gmail.com</a></span></div></div>
       <div class="info-row"><div class="info-ic">📘</div><div><strong>Facebook</strong><span><a href="https://www.facebook.com/dolphin.kotak" target="_blank" id="fb-info-link" style="color:var(--gold);text-decoration:none;">Dolphin Kotak</a></span></div></div>
       <div class="info-row" id="instagram-info-row"><div class="info-ic">📸</div><div><strong>Instagram</strong><span id="instagram-link-container"><a href="https://www.instagram.com/vipnumberwala9" target="_blank" style="color:var(--gold);text-decoration:none;">@vipnumberwala9</a></span></div></div>
@@ -476,7 +499,7 @@ footer{background:#f5f5f5;border-top:1px solid var(--border);padding:40px 6vw 28
 <footer style="background:#f5f5f5;border-top:1px solid var(--border);padding:60px 6vw 40px;">
   <div class="footer-top">
     <div class="footer-brand">
-      <div class="footer-logo-text" style="font-family:'Satisfy',cursive;font-size:1.8rem;background:linear-gradient(135deg,var(--gold2),var(--gold),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:15px;">VIP NUMBER WALA</div>
+      <div class="footer-logo-text" style="font-size:1.6rem;font-weight: bold;text-decoration: underline;background:linear-gradient(135deg,var(--gold2),var(--gold),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:15px;">𝑽𝑰𝑷 𝑵𝑼𝑴𝑩𝑬𝑹 𝑾𝑨𝑳𝑨</div>
       <p style="color:#000;line-height:1.7;font-size:1rem;font-weight:500;">India's most trusted destination for premium VIP mobile numbers since 2012.</p>
     </div>
     <div class="footer-col"><h5>Categories</h5><ul><li><a href="#numbers">VIP Premium Numbers</a></li><li><a href="#numbers">Fancy / Choice Numbers</a></li><li><a href="#numbers">Numerology Numbers</a></li><li><a href="#numbers">Business Numbers</a></li></ul></div>
@@ -514,6 +537,17 @@ footer{background:#f5f5f5;border-top:1px solid var(--border);padding:40px 6vw 28
       <div><label style="display:block;color:#666666;font-weight:700;margin-bottom:6px;font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;">💰 Price (₹) *</label><input type="number" id="editPrice" placeholder="Enter price" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;color:#0a0a0a;font-family:'Poppins',sans-serif;font-size:1rem;font-weight:500;"></div>
       <div><label style="display:block;color:#666666;font-weight:700;margin-bottom:6px;font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;">📡 Operator</label><input type="text" id="editOperator" placeholder="e.g., Jio, Airtel" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;color:#0a0a0a;font-family:'Poppins',sans-serif;font-size:1rem;font-weight:500;"></div>
       <div><label style="display:block;color:#666666;font-weight:700;margin-bottom:6px;font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;">🏷️ Label</label><input type="text" id="editLabel" placeholder="e.g., Lucky, Golden" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;color:#0a0a0a;font-family:'Poppins',sans-serif;font-size:1rem;font-weight:500;"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+  <div><label style="display:block;color:#666666;font-weight:700;margin-bottom:6px;font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;">📦 TTP Label</label><input type="text" id="editTtpLabel" placeholder="e.g. TTP" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;color:#0a0a0a;font-family:'Poppins',sans-serif;font-size:1rem;font-weight:500;"></div>
+  <div><label style="display:block;color:#666666;font-weight:700;margin-bottom:6px;font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;">🔢 TTP Value</label><input type="text" id="editTtpValue" placeholder="e.g. 8" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;color:#0a0a0a;font-family:'Poppins',sans-serif;font-size:1rem;font-weight:500;"></div>
+</div>
+<div style="margin-bottom:4px;"><label style="display:block;color:#666666;font-weight:700;margin-bottom:8px;font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;">📲 Ready to Port</label>
+  <div style="display:flex;gap:10px;">
+    <button type="button" id="rtpYesBtn" onclick="setRtpEdit(true)" style="flex:1;padding:10px;border:1.5px solid #ddd;border-radius:6px;background:#fff;color:#666;font-family:'Poppins',sans-serif;font-weight:700;font-size:0.8rem;cursor:pointer;transition:all 0.2s;">✅ Ready</button>
+    <button type="button" id="rtpNoBtn" onclick="setRtpEdit(false)" style="flex:1;padding:10px;border:1.5px solid #ddd;border-radius:6px;background:#fff;color:#666;font-family:'Poppins',sans-serif;font-weight:700;font-size:0.8rem;cursor:pointer;transition:all 0.2s;">❌ Not Ready</button>
+    <button type="button" id="rtpNullBtn" onclick="setRtpEdit(null)" style="flex:1;padding:10px;border:1.5px solid #ddd;border-radius:6px;background:#fff;color:#666;font-family:'Poppins',sans-serif;font-weight:700;font-size:0.8rem;cursor:pointer;transition:all 0.2s;">— Unset</button>
+  </div>
+</div>
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:15px;">
         <button onclick="saveEditNumber()" style="padding:14px;background:var(--gold);color:white;border:none;border-radius:6px;cursor:pointer;font-weight:700;font-size:0.85rem;text-transform:uppercase;font-family:'Poppins',sans-serif;">✅ Save</button>
         <button onclick="toggleSoldFromEdit()" id="editSoldBtn" style="padding:14px;background:#ff4444;color:white;border:none;border-radius:6px;cursor:pointer;font-weight:700;font-size:0.85rem;text-transform:uppercase;font-family:'Poppins',sans-serif;">🔴 Sold</button>
@@ -607,8 +641,19 @@ footer{background:#f5f5f5;border-top:1px solid var(--border);padding:40px 6vw 28
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:20px;">
           <div><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">Email</label><input type="email" id="settingsEmail" placeholder="vipnumberwala9@gmail.com" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
           <div><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">WhatsApp</label><input type="text" id="settingsWhatsApp" placeholder="919372503810" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
-          <div><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">Phone</label><input type="text" id="settingsPhone" placeholder="+91 77188 89999" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
-          <div><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">UPI ID</label><input type="text" id="settingsUPI" placeholder="9372503810@airtel" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
+       <div><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">Phone</label><input type="text" id="settingsPhone" placeholder="+91 77188 89999" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
+<div><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">UPI ID</label><input type="text" id="settingsUPI" placeholder="9372503810@airtel" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
+<div style="grid-column:1/-1;border-top:1px solid #eee;padding-top:20px;margin-top:4px;">
+  <div style="font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">🏦 Bank Transfer Details</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <div><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">Account Holder</label><input type="text" id="settingsBankHolder" placeholder="e.g. Mayank A Kotak" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
+    <div><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">Account Number</label><input type="text" id="settingsBankNumber" placeholder="e.g. 1234567890" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
+    <div><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">IFSC Code</label><input type="text" id="settingsBankIFSC" placeholder="e.g. SBIN0001234" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
+    <div><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">Branch</label><input type="text" id="settingsBankBranch" placeholder="e.g. Mumbai Main Branch" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
+    <div><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">Account Type</label><input type="text" id="settingsBankType" placeholder="e.g. Current / Savings" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
+    <div><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">Contact</label><input type="text" id="settingsBankContact" placeholder="e.g. +91 9372503810" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
+  </div>
+</div>
           <div><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">Instagram URL</label><input type="text" id="settingsInstagramURL" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
           <div><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">Instagram Name</label><input type="text" id="settingsInstagramName" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
         </div>
@@ -670,7 +715,7 @@ const DEFAULT_NUMBERS = [
   {id:'n15',number:'7700770077',cat:'Fancy',price:48000,priceStr:'₹48,000',op:'Vi',tag:'',label:'77 Pattern',sold:false},
   {id:'n16',number:'9898989898',cat:'Fancy',price:65000,priceStr:'₹65,000',op:'Jio',tag:'new',label:'98 Repeating',sold:false},
 ];
-const DEFAULT_SETTINGS = {email:'vipnumberwala9@gmail.com',whatsapp:'919372503810',phone:'+91 77188 89999',upi:'9372503810@airtel',instagramUrl:'https://www.instagram.com/vipnumberwala9',instagramName:'@vipnumberwala9'};
+const DEFAULT_SETTINGS = {email:'vipnumberwala9@gmail.com',whatsapp:'919372503810',phone:'+91 77188 89999',upi:'9372503810@airtel',instagramUrl:'https://www.instagram.com/vipnumberwala9',instagramName:'@vipnumberwala9',bankHolder:'',bankNumber:'',bankIFSC:'',bankBranch:'',bankType:'',bankContact:''};
 
 // ── STATE ──
 let numbers = JSON.parse(JSON.stringify(DEFAULT_NUMBERS));
@@ -721,6 +766,8 @@ function renderNumbers(filter){
       <div class="nc-tag">${n.cat} · ${n.label||''}</div>
       <div class="nc-number">${n.number}</div>
       <div class="nc-operator">${n.op||'Any'} Network</div>
+${(n.rtp!==undefined&&n.rtp!==null)?`<div class="nc-rtp-badge ${n.rtp?'ready':'not-ready'}">${n.rtp?'✅ Ready to Port':'❌ Not Ready to Port'}</div>`:''}
+${(n.ttp_label||n.ttp_value)?`<div class="nc-ttp-row"><span class="nc-ttp-label">${n.ttp_label||'TTP'}</span><span class="nc-ttp-value">${n.ttp_value||'—'}</span></div>`:''}
       <div class="nc-price">${n.priceStr} <span>onwards</span></div>
       <div class="nc-actions">
         <button class="nc-add${inCart?' added':''}" onclick="${isSold?'return false':`toggleCart('${n.id}')`}" ${isSold?'disabled':''}>
@@ -861,9 +908,31 @@ async function submitEnquiry(){
   try{
     await sb.from('enquiries').insert([{name,phone,cat:cat||'Not specified',op:op||'Any',budget:budget||'Not specified',note:note||'None',status:'New',timestamp:Date.now()}]);
   }catch(e){console.error(e);}
-  const subject=encodeURIComponent(`VIP Number Enquiry – ${name}`);
-  const body=encodeURIComponent(`ENQUIRY – VIP NUMBER WALA\nName: ${name}\nPhone: ${phone}\nCategory: ${cat||'N/A'}\nOperator: ${op||'Any'}\nBudget: ${budget||'N/A'}\nNotes: ${note||'None'}`);
-  window.location.href=`mailto:${settings.email}?subject=${subject}&body=${body}`;
+const waNumber = '918108999999';
+const waMessage = encodeURIComponent(
+`🌟 *New Enquiry — VIP NUMBER WALA* 🌟
+
+👤 *Name:* ${name}
+📞 *Phone:* ${phone}
+📂 *Category:* ${cat||'Not specified'}
+📡 *Operator:* ${op||'Any'}
+💰 *Budget:* ${budget||'Not specified'}
+📝 *Notes:* ${note||'None'}
+
+_Sent from VIP Number Wala website_`
+);
+
+const waURL = `https://wa.me/${waNumber}?text=${waMessage}`;
+const waWindow = window.open(waURL, '_blank');
+
+// Fallback to email if WhatsApp didn't open
+setTimeout(() => {
+  if (!waWindow || waWindow.closed || typeof waWindow.closed === 'undefined') {
+    const subject = encodeURIComponent(`VIP Number Enquiry – ${name}`);
+    const body = encodeURIComponent(`ENQUIRY – VIP NUMBER WALA\nName: ${name}\nPhone: ${phone}\nCategory: ${cat||'N/A'}\nOperator: ${op||'Any'}\nBudget: ${budget||'N/A'}\nNotes: ${note||'None'}`);
+    window.location.href = `mailto:vipnumberwala9@gmail.com?subject=${subject}&body=${body}`;
+  }
+}, 1500);
   setTimeout(()=>{document.getElementById('enq-form-content').style.display='none';document.getElementById('enq-success').style.display='block';showToast('✅ Enquiry sent!');},700);
 }
 
@@ -906,17 +975,43 @@ async function loadSettings(){
   try{
     const{data}=await sb.from('settings').select('*');
     const s={...DEFAULT_SETTINGS};
-    if(data)data.forEach(row=>{if(row.key in s)s[row.key]=row.value;});
+    if(data){
+      data.forEach(row=>{
+        if(row.key&&row.value!==undefined&&row.value!==null) s[row.key]=row.value;
+      });
+    }
     window.currentSettings=s;
-    // Apply to page
+
+    // Apply UPI
+    const upiEl=document.getElementById('upi-display');
+    if(upiEl&&s.upi)upiEl.textContent=s.upi;
+
+    // Apply bank details
+    const bh=document.getElementById('bank-holder-display');if(bh)bh.textContent=s.bankHolder||'—';
+    const bn=document.getElementById('bank-number-display');if(bn)bn.textContent=s.bankNumber||'—';
+    const bi=document.getElementById('bank-ifsc-display');if(bi)bi.textContent=s.bankIFSC||'—';
+    const bb=document.getElementById('bank-branch-display');if(bb)bb.textContent=s.bankBranch||'—';
+    const bt=document.getElementById('bank-type-display');if(bt)bt.textContent=s.bankType||'—';
+    const bc=document.getElementById('bank-contact-display');if(bc)bc.textContent=s.bankContact||'—';
+
+    // Apply Instagram
     const igRow=document.getElementById('instagram-info-row');
     const igLink=document.getElementById('instagram-link-container');
-    if(s.instagramUrl&&s.instagramUrl!=='#'&&igLink){igLink.innerHTML=`<a href="${s.instagramUrl}" target="_blank" style="color:var(--gold);text-decoration:none;">${s.instagramName}</a>`;if(igRow)igRow.style.display='flex';}
-    const fi=document.getElementById('footer-instagram');if(fi&&s.instagramUrl){fi.href=s.instagramUrl;fi.textContent=s.instagramName;}
-    const upiEl=document.getElementById('upi-display');if(upiEl&&s.upi)upiEl.textContent=s.upi;
+    if(s.instagramUrl&&s.instagramUrl!=='#'&&igLink){
+      igLink.innerHTML=`<a href="${s.instagramUrl}" target="_blank" style="color:var(--gold);text-decoration:none;">${s.instagramName}</a>`;
+      if(igRow)igRow.style.display='flex';
+    }
+    const fi=document.getElementById('footer-instagram');
+    if(fi&&s.instagramUrl){fi.href=s.instagramUrl;fi.textContent=s.instagramName;}
+
     // Hero stats
     const hs=await sbGet('heroStats');
-    if(hs){const st=JSON.parse(hs);if(st.numbers)document.getElementById('stat-numbers-display').textContent=st.numbers;if(st.customers)document.getElementById('stat-customers-display').textContent=st.customers;if(st.years)document.getElementById('stat-years-display').textContent=st.years;}
+    if(hs){
+      const st=JSON.parse(hs);
+      if(st.numbers)document.getElementById('stat-numbers-display').textContent=st.numbers;
+      if(st.customers)document.getElementById('stat-customers-display').textContent=st.customers;
+      if(st.years)document.getElementById('stat-years-display').textContent=st.years;
+    }
   }catch(e){window.currentSettings=DEFAULT_SETTINGS;}
 }
 
@@ -1041,6 +1136,10 @@ function editModal(id){
   document.getElementById('editId').value=n.id;document.getElementById('editNumber').value=n.number;
   document.getElementById('editCategory').value=n.cat||'';document.getElementById('editPrice').value=n.price;
   document.getElementById('editOperator').value=n.op||'';document.getElementById('editLabel').value=n.label||'';
+  document.getElementById('editTtpLabel').value = n.ttp_label||'';
+document.getElementById('editTtpValue').value = n.ttp_value||'';
+_editRtp = (n.rtp!==undefined&&n.rtp!==null) ? n.rtp : null;
+setRtpEdit(_editRtp);
   const btn=document.getElementById('editSoldBtn');
   btn.textContent=n.sold?'🟢 Mark Available':'🔴 Mark Sold';btn.style.background=n.sold?'#4CAF50':'#d32f2f';
   document.getElementById('editNumberOverlay').setAttribute('data-edit-id',id);
@@ -1069,7 +1168,9 @@ async function saveEditNumber(){
   const label=document.getElementById('editLabel').value.trim();
   if(!num||!cat||!price){showToast('❌ Fill all required fields');return;}
   const ps='₹'+price.toLocaleString('en-IN');
-  try{await sb.from('numbers').update({number:num,cat,price,price_str:ps,op:op||'Any',label:label||n.label}).eq('id',id);Object.assign(n,{number:num,cat,price,priceStr:ps,op:op||'Any',label:label||n.label});loadAdminNumbers();closeEditNumber();showToast('✅ Updated');}
+  const ttpLabel=document.getElementById('editTtpLabel').value.trim();
+  const ttpValue=document.getElementById('editTtpValue').value.trim();
+  try{await sb.from('numbers').update({number:num,cat,price,price_str:ps,op:op||'Any',label:label||n.label,rtp:_editRtp,ttp_label:ttpLabel,ttp_value:ttpValue}).eq('id',id);Object.assign(n,{number:num,cat,price,priceStr:ps,op:op||'Any',label:label||n.label,rtp:_editRtp,ttp_label:ttpLabel,ttp_value:ttpValue});loadAdminNumbers();closeEditNumber();showToast('✅ Updated');}
   catch(e){showToast('❌ '+e.message);}
 }
 
@@ -1147,13 +1248,34 @@ async function loadSettingsAdmin(){
     const{data}=await sb.from('settings').select('*');
     const s={...DEFAULT_SETTINGS};
     if(data)data.forEach(row=>{if(row.key in s)s[row.key]=row.value;});
-    document.getElementById('settingsEmail').value=s.email;document.getElementById('settingsWhatsApp').value=s.whatsapp;document.getElementById('settingsPhone').value=s.phone;document.getElementById('settingsUPI').value=s.upi;document.getElementById('settingsInstagramURL').value=s.instagramUrl;document.getElementById('settingsInstagramName').value=s.instagramName;
+    document.getElementById('settingsEmail').value=s.email;document.getElementById('settingsWhatsApp').value=s.whatsapp;document.getElementById('settingsPhone').value=s.phone;document.getElementById('settingsUPI').value=s.upi;document.getElementById('settingsUPI').value=s.upi||'';
+document.getElementById('settingsInstagramURL').value=s.instagramUrl;
+document.getElementById('settingsInstagramName').value=s.instagramName;
+    document.getElementById('settingsBankHolder').value=s.bankHolder||'';
+document.getElementById('settingsBankNumber').value=s.bankNumber||'';
+document.getElementById('settingsBankIFSC').value=s.bankIFSC||'';
+document.getElementById('settingsBankBranch').value=s.bankBranch||'';
+document.getElementById('settingsBankType').value=s.bankType||'';
+document.getElementById('settingsBankContact').value=s.bankContact||'';
   }catch(e){}
 }
 function loadSettingsAdminData(){loadSettingsAdmin();}
 
 async function saveBusinessSettings(){
-  const s={email:document.getElementById('settingsEmail').value.trim()||DEFAULT_SETTINGS.email,whatsapp:document.getElementById('settingsWhatsApp').value.trim()||DEFAULT_SETTINGS.whatsapp,phone:document.getElementById('settingsPhone').value.trim()||DEFAULT_SETTINGS.phone,upi:document.getElementById('settingsUPI').value.trim()||DEFAULT_SETTINGS.upi,instagramUrl:document.getElementById('settingsInstagramURL').value.trim()||DEFAULT_SETTINGS.instagramUrl,instagramName:document.getElementById('settingsInstagramName').value.trim()||DEFAULT_SETTINGS.instagramName};
+  const s={
+  email:document.getElementById('settingsEmail').value.trim()||DEFAULT_SETTINGS.email,
+  whatsapp:document.getElementById('settingsWhatsApp').value.trim()||DEFAULT_SETTINGS.whatsapp,
+  phone:document.getElementById('settingsPhone').value.trim()||DEFAULT_SETTINGS.phone,
+  upi:document.getElementById('settingsUPI').value.trim()||DEFAULT_SETTINGS.upi,
+  instagramUrl:document.getElementById('settingsInstagramURL').value.trim()||DEFAULT_SETTINGS.instagramUrl,
+  instagramName:document.getElementById('settingsInstagramName').value.trim()||DEFAULT_SETTINGS.instagramName,
+  bankHolder:document.getElementById('settingsBankHolder').value.trim(),
+  bankNumber:document.getElementById('settingsBankNumber').value.trim(),
+  bankIFSC:document.getElementById('settingsBankIFSC').value.trim(),
+  bankBranch:document.getElementById('settingsBankBranch').value.trim(),
+  bankType:document.getElementById('settingsBankType').value.trim(),
+  bankContact:document.getElementById('settingsBankContact').value.trim()
+};
   showToast('⏳ Saving...');
   try{await sb.from('settings').upsert(Object.entries(s).map(([key,value])=>({key,value})));await loadSettings();showToast('✅ Settings saved');}
   catch(e){showToast('❌ '+e.message);}
@@ -1248,6 +1370,21 @@ document.addEventListener('DOMContentLoaded',async()=>{
   (function loop(){cx+=(mx-cx)*0.07;cy+=(my-cy)*0.07;img.style.transform='translateY(-50%) translate('+Math.round(cx*30*10)/10+'px,'+Math.round(cy*30*10)/10+'px)';requestAnimationFrame(loop);})();
 })();
 </script>
+
+
+<script>
+  let _editRtp = null;
+function setRtpEdit(val){
+  _editRtp = val;
+  document.getElementById('rtpYesBtn').style.background = val===true ? 'rgba(76,175,80,0.15)' : '#fff';
+  document.getElementById('rtpYesBtn').style.borderColor = val===true ? '#4CAF50' : '#ddd';
+  document.getElementById('rtpNoBtn').style.background = val===false ? 'rgba(211,47,47,0.08)' : '#fff';
+  document.getElementById('rtpNoBtn').style.borderColor = val===false ? '#c62828' : '#ddd';
+  document.getElementById('rtpNullBtn').style.background = val===null ? '#f5f5f5' : '#fff';
+  document.getElementById('rtpNullBtn').style.borderColor = val===null ? '#999' : '#ddd';
+}
+</script>
+
 
 <!-- PRIVACY POLICY MODAL -->
 <div class="modal-overlay" id="privacyOverlay" onclick="if(event.target===this)closePrivacyModal()">
