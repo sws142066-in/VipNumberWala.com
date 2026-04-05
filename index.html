@@ -488,6 +488,7 @@ footer{background:#f5f5f5;border-top:1px solid var(--border);padding:40px 6vw 28
       <h3>Find Your <span class="g">Perfect<br/>Number</span> Today</h3>
       <div class="gold-divider" style="margin-bottom:32px"></div>
 <div class="info-row"><div class="info-ic">📞</div><div><strong>Call / WhatsApp</strong><span><a href="tel:+917718889999">+91 771 888 9999</a> &nbsp;|&nbsp; <a href="tel:+918108999999">+91 810 899 9999</a></span></div></div>
+<div class="info-row" id="customercare-info-row"><div class="info-ic">🎧</div><div><strong>Customer Care</strong><span id="customercare-display"><a href="tel:+918108666666" style="color:var(--gold);text-decoration:none;">+91 81086 66666</a></span></div></div>
       <div class="info-row"><div class="info-ic">✉️</div><div><strong>Email Us</strong><span><a href="mailto:vipnumberwala9@gmail.com">vipnumberwala9@gmail.com</a></span></div></div>
       <div class="info-row"><div class="info-ic">📘</div><div><strong>Facebook</strong><span><a href="https://www.facebook.com/dolphin.kotak" target="_blank" id="fb-info-link" style="color:var(--gold);text-decoration:none;">Dolphin Kotak</a></span></div></div>
       <div class="info-row" id="instagram-info-row"><div class="info-ic">📸</div><div><strong>Instagram</strong><span id="instagram-link-container"><a href="https://www.instagram.com/vipnumberwala9" target="_blank" style="color:var(--gold);text-decoration:none;">@vipnumberwala9</a></span></div></div>
@@ -656,6 +657,7 @@ footer{background:#f5f5f5;border-top:1px solid var(--border);padding:40px 6vw 28
 </div>
           <div><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">Instagram URL</label><input type="text" id="settingsInstagramURL" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
           <div><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">Instagram Name</label><input type="text" id="settingsInstagramName" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
+          <div style="grid-column:1/-1;"><label style="display:block;color:#666;font-weight:700;margin-bottom:8px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">🎧 Customer Care Number</label><input type="text" id="settingsCustomerCare" placeholder="e.g. +91 81086 66666" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-family:'Poppins',sans-serif;background:white;color:#0a0a0a;"></div>
         </div>
         <button onclick="saveBusinessSettings()" style="width:100%;padding:14px;background:var(--gold);color:white;border:none;border-radius:6px;cursor:pointer;font-weight:700;font-size:0.85rem;text-transform:uppercase;font-family:'Poppins',sans-serif;">💾 Save Settings</button>
       </div>
@@ -715,7 +717,7 @@ const DEFAULT_NUMBERS = [
   {id:'n15',number:'7700770077',cat:'Fancy',price:48000,priceStr:'₹48,000',op:'Vi',tag:'',label:'77 Pattern',sold:false},
   {id:'n16',number:'9898989898',cat:'Fancy',price:65000,priceStr:'₹65,000',op:'Jio',tag:'new',label:'98 Repeating',sold:false},
 ];
-const DEFAULT_SETTINGS = {email:'vipnumberwala9@gmail.com',whatsapp:'919372503810',phone:'+91 77188 89999',upi:'9372503810@airtel',instagramUrl:'https://www.instagram.com/vipnumberwala9',instagramName:'@vipnumberwala9',bankHolder:'',bankNumber:'',bankIFSC:'',bankBranch:'',bankType:'',bankContact:''};
+const DEFAULT_SETTINGS = {email:'vipnumberwala9@gmail.com',whatsapp:'919372503810',phone:'+91 77188 89999',upi:'9372503810@airtel',instagramUrl:'https://www.instagram.com/vipnumberwala9',instagramName:'@vipnumberwala9',customerCare:'+91 81086 66666',bankHolder:'',bankNumber:'',bankIFSC:'',bankBranch:'',bankType:'',bankContact:''};
 
 // ── STATE ──
 let numbers = JSON.parse(JSON.stringify(DEFAULT_NUMBERS));
@@ -997,13 +999,14 @@ async function loadSettings(){
     // Apply Instagram
     const igRow=document.getElementById('instagram-info-row');
     const igLink=document.getElementById('instagram-link-container');
+    
     if(s.instagramUrl&&s.instagramUrl!=='#'&&igLink){
       igLink.innerHTML=`<a href="${s.instagramUrl}" target="_blank" style="color:var(--gold);text-decoration:none;">${s.instagramName}</a>`;
       if(igRow)igRow.style.display='flex';
     }
     const fi=document.getElementById('footer-instagram');
     if(fi&&s.instagramUrl){fi.href=s.instagramUrl;fi.textContent=s.instagramName;}
-
+document.getElementById('settingsCustomerCare').value = s.customerCare || '';
     // Hero stats
     const hs=await sbGet('heroStats');
     if(hs){
@@ -1269,6 +1272,7 @@ async function saveBusinessSettings(){
   upi:document.getElementById('settingsUPI').value.trim()||DEFAULT_SETTINGS.upi,
   instagramUrl:document.getElementById('settingsInstagramURL').value.trim()||DEFAULT_SETTINGS.instagramUrl,
   instagramName:document.getElementById('settingsInstagramName').value.trim()||DEFAULT_SETTINGS.instagramName,
+  customerCare:document.getElementById('settingsCustomerCare').value.trim()||DEFAULT_SETTINGS.customerCare,
   bankHolder:document.getElementById('settingsBankHolder').value.trim(),
   bankNumber:document.getElementById('settingsBankNumber').value.trim(),
   bankIFSC:document.getElementById('settingsBankIFSC').value.trim(),
